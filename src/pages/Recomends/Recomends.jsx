@@ -12,7 +12,7 @@ const Recomends = () => {
                 heading={'Chef Recommends'}
             ></SectionTitle>
 
-            <div className="flex justify-between">
+            <div className="lg:flex lg:justify-between">
                 <div className="card bg-base-100 w-96 shadow-xl">
                     <figure className="px-10 pt-10">
                         <img
