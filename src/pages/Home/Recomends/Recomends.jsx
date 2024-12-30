@@ -1,7 +1,8 @@
-import SectionTitle from "../../components/SectionTitle/SectionTitle";
-import card1 from '../../assets/home/slide1.jpg'
-import card2 from '../../assets/home/slide1.jpg'
-import card3 from '../../assets/home/slide1.jpg'
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
+import card1 from '../../../assets/home/slide1.jpg'
+import card2 from '../../../assets/home/slide1.jpg'
+import card3 from '../../../assets/home/slide1.jpg'
+
 
 
 const Recomends = () => {
