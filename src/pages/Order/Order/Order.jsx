@@ -27,7 +27,7 @@ const Order = () => {
                 <title>Bistro Boss | Order Food</title>
             </Helmet>
             <Cover img={orderCoverImg} title="Order Food" text="Would you like to try a dish?"></Cover>
-            <div className=''>
+            <div className='mb-10'>
                 <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                     <div className='flex justify-center w-4/12 mx-auto bg-black bg-opacity-30 my-5 rounded-xl uppercase font-bold sticky top-16 z-10'>
                         <TabList>
