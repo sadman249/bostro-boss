@@ -14,7 +14,7 @@ const Order = () => {
     const initialIndex = categories.indexOf(category);
     const [tabIndex, setTabIndex] = useState(initialIndex);
     const [menu] = useMenu();
-    
+
     const desserts = menu.filter(item => item.category === 'dessert');
     const soup = menu.filter(item => item.category === 'soup');
     const salad = menu.filter(item => item.category === 'salad');
@@ -26,31 +26,35 @@ const Order = () => {
             <Helmet>
                 <title>Bistro Boss | Order Food</title>
             </Helmet>
-            <Cover img={orderCoverImg} title="Order Food"></Cover>
-            <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-                <TabList>
-                    <Tab>Salad</Tab>
-                    <Tab>Pizza</Tab>
-                    <Tab>Soup</Tab>
-                    <Tab>Dessert</Tab>
-                    <Tab>Drinks</Tab>
-                </TabList>
-                <TabPanel>
-                    <OrderTab items={salad}></OrderTab>
-                </TabPanel>
-                <TabPanel>
-                    <OrderTab items={pizza}></OrderTab>
-                </TabPanel>
-                <TabPanel>
-                    <OrderTab items={soup}></OrderTab>
-                </TabPanel>
-                <TabPanel>
-                    <OrderTab items={desserts}></OrderTab>
-                </TabPanel>
-                <TabPanel>
-                    <OrderTab items={drinks}></OrderTab>
-                </TabPanel>
-            </Tabs>
+            <Cover img={orderCoverImg} title="Order Food" text="Would you like to try a dish?"></Cover>
+            <div className=''>
+                <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
+                    <div className='flex justify-center w-4/12 mx-auto bg-black bg-opacity-30 my-5 rounded-xl uppercase font-bold sticky top-16 z-10'>
+                        <TabList>
+                            <Tab>Salad</Tab>
+                            <Tab>Pizza</Tab>
+                            <Tab>Soup</Tab>
+                            <Tab>Dessert</Tab>
+                            <Tab>Drinks</Tab>
+                        </TabList>
+                    </div>
+                    <TabPanel>
+                        <OrderTab items={salad}></OrderTab>
+                    </TabPanel>
+                    <TabPanel>
+                        <OrderTab items={pizza}></OrderTab>
+                    </TabPanel>
+                    <TabPanel>
+                        <OrderTab items={soup}></OrderTab>
+                    </TabPanel>
+                    <TabPanel>
+                        <OrderTab items={desserts}></OrderTab>
+                    </TabPanel>
+                    <TabPanel>
+                        <OrderTab items={drinks}></OrderTab>
+                    </TabPanel>
+                </Tabs>
+            </div>
         </div>
     );
 };
