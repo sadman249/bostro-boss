@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import useMenu from "../../../hooks/useMenu";
 import MenuItem from "../../Shared/MenuItem/MenuItem";
@@ -23,7 +24,7 @@ const PopularMenu = () => {
                 }
             </div>
             <div className="flex justify-center mt-5">
-                <button className="btn btn-outline border-0 border-b-4 mt-4">View Full Menu</button>
+                <button className="btn btn-outline border-0 border-b-4 mt-4"><Link to="/menu">View Full Menu</Link></button>
             </div>
         </section>
     );
