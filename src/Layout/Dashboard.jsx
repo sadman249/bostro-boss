@@ -10,7 +10,7 @@ const Dashboard = () => {
         <div className="flex">
             {/* dashboard side bar */}
             <div className="w-64 min-h-screen bg-orange-400">
-                <ul className="menu p-4">
+                <ul className="menu p-4 sticky top-2">
                     <li>
                         <NavLink to="/dashboard/userHome">
                             <FaHome></FaHome>
