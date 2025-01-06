@@ -1,32 +1,36 @@
-import { useContext } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../../providers/AuthProvider';
-import { SiFacebook, SiGithub, SiGoogle } from 'react-icons/si';
+
+import { useNavigate } from 'react-router-dom';
+import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
+import useAuth from '../../../hooks/useAuth';
+import useAxiosPublic from '../../../hooks/useAxiosPublic';
 
 const SocialLogin = () => {
-    const { singInWithGoogle } = useContext(AuthContext);
-    const location = useLocation();
+    const { googleSignIn } = useAuth();
+    const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
-    console.log('in signIn page', location)
-    const from = location.state || '/';
 
-    const handleGoogleSignIn = () => {
-        singInWithGoogle()
-            .then(result => {
-                console.log(result.user)
-                navigate(from);
+    const handleGoogleSignIn = () =>{
+        googleSignIn()
+        .then(result =>{
+            console.log(result.user);
+            const userInfo = {
+                email: result.user?.email,
+                name: result.user?.displayName
+            }
+            axiosPublic.post('/users', userInfo)
+            .then(res =>{
+                console.log(res.data);
+                navigate('/');
             })
-            .catch(error => {
-                console.log(error.message)
-            })
+        })
     }
 
     return (
         <div className=''>
             <div className='flex mx-auto gap-5 mt-2'>
-                <p className='border rounded-full p-1 border-black hover:border-white'><SiFacebook className='size-5' /></p>
-                <p onClick={handleGoogleSignIn} className='border rounded-full p-1 border-black hover:border-white'><SiGoogle className='size-5' /></p>
-                <p className='border rounded-full p-1 border-black hover:border-white'><SiGithub className='size-5' /></p>
+                <p className='border rounded-full p-1 border-black hover:border-white'><FaFacebook className='size-5' /></p>
+                <p onClick={handleGoogleSignIn} className='border rounded-full p-1 border-black hover:border-white'><FaGoogle className='size-5' /></p>
+                <p className='border rounded-full p-1 border-black hover:border-white'><FaGithub className='size-5' /></p>
             </div>
 
         </div>

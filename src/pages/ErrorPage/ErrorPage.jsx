@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import error from '../../assets/404.gif'
+import { FaHome } from 'react-icons/fa';
 
 const ErrorPage = () => {
     return (
@@ -9,8 +10,8 @@ const ErrorPage = () => {
                 <img className='w-96' src={error} alt="" />
 
             </div>
-            <div className='text-center mt-5'>
-                <Link to="/"><button className='btn'>Go To BackPage</button></Link>
+            <div className='text-center font-semibold mt-5 items-center '>
+                <Link to="/"><button className='btn bg-orange-300'>Back Home <FaHome></FaHome></button></Link>
             </div>
             </div>
         </>
