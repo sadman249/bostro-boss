@@ -9,7 +9,7 @@ const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const UpdateItem = () => {
-    const {name, category, recipe, price, _id} = useLoaderData();
+    const { name, category, recipe, price, _id } = useLoaderData();
 
     const { register, handleSubmit } = useForm();
     const axiosPublic = useAxiosPublic();
@@ -35,7 +35,7 @@ const UpdateItem = () => {
             // 
             const menuRes = await axiosSecure.patch(`/menu/${_id}`, menuItem);
             console.log(menuRes.data)
-            if(menuRes.data.modifiedCount > 0){
+            if (menuRes.data.modifiedCount > 0) {
                 // show success popup
                 // reset();
                 Swal.fire({
@@ -44,13 +44,13 @@ const UpdateItem = () => {
                     title: `${data.name} is updated to the menu.`,
                     showConfirmButton: false,
                     timer: 1500
-                  });
+                });
             }
         }
-        console.log( 'with image url', res.data);
+        console.log('with image url', res.data);
     };
-    
-    
+
+
     return (
         <div>
             <SectionTitle heading="Update an Item" subHeading="Refresh info"></SectionTitle>
@@ -111,9 +111,11 @@ const UpdateItem = () => {
                         <input {...register('image', { required: true })} type="file" className="file-input w-full max-w-xs" />
                     </div>
 
-                    <button className="btn">
-                        Update menu Item
-                    </button>
+                    <div className="flex justify-center">
+                        <button className="btn bg-orange-300">
+                            Update Menu Item
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

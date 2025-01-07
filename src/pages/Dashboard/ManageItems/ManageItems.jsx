@@ -77,11 +77,11 @@ const ManageItems = () => {
                                     <td>
                                         {item.name}
                                     </td>
-                                    <td className="text-right">${item.price}</td>
+                                    <td className="">${item.price}</td>
                                     <td>
                                         <Link to={`/dashboard/updateItem/${item._id}`}>
                                             <button
-                                                className="btn btn-ghost btn-lg bg-orange-500">
+                                                className="btn btn-ghost bg-orange-500">
                                                 <FaEdit className="text-white 
                                         "></FaEdit>
                                             </button>
