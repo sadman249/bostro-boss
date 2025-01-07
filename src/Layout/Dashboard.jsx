@@ -2,6 +2,7 @@ import { FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShopp
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
+import logo from '../assets/logo.png';
 
 
 const Dashboard = () => {
@@ -14,7 +15,11 @@ const Dashboard = () => {
         <div className="flex">
             {/* dashboard side bar */}
             <div className="w-64 min-h-screen bg-orange-400">
-                <ul className="menu p-4">
+                <div className="flex p-4 gap-2 items-center">
+                    <img className="w-10 h-10 bg-white rounded-full" src={logo} alt="" />
+                    <h1 className="text-3xl font-bold">Bistro Boss</h1>
+                </div>
+                <ul className="menu p-4 space-y-1">
                     {
                         isAdmin ? <>
                             <li>
