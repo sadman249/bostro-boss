@@ -1,8 +1,9 @@
-import { FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUsers, FaUtensils } from "react-icons/fa";
+import { FaAd, FaBook, FaCalendar, FaCalendarAlt, FaEnvelope, FaHistory, FaHome, FaList, FaShopify, FaShoppingCart, FaUsers, FaUtensils } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
 import logo from '../assets/logo.png';
+import { FiMenu } from "react-icons/fi";
 
 
 const Dashboard = () => {
@@ -58,8 +59,13 @@ const Dashboard = () => {
                                     </li>
                                     <li>
                                         <NavLink to="/dashboard/reservation">
-                                            <FaCalendar></FaCalendar>
+                                            <FaCalendarAlt />
                                             Reservation</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/dashboard/paymentHistory">
+                                            <FaHistory></FaHistory>
+                                            Payment History</NavLink>
                                     </li>
                                     <li>
                                         <NavLink to="/dashboard/cart">
@@ -72,9 +78,9 @@ const Dashboard = () => {
                                             Add a Review</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/dashboard/bookings">
-                                            <FaList></FaList>
-                                            My Bookings</NavLink>
+                                        <NavLink to="/dashboard/my booking">
+                                            <FaCalendar></FaCalendar>
+                                            My Booking</NavLink>
                                     </li>
                                 </>
                         }
@@ -87,8 +93,13 @@ const Dashboard = () => {
                         </li>
                         <li>
                             <NavLink to="/order/salad">
-                                <FaSearch></FaSearch>
+                                <FiMenu />
                                 Menu</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/order/shop">
+                                <FaShopify />
+                                Shop</NavLink>
                         </li>
                         <li>
                             <NavLink to="/order/contact">
